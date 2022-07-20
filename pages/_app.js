@@ -1,22 +1,32 @@
 import '../styles/globals.css'
-import {Provider, createClient} from "urql";
+import Head from 'next/head';
+import { Provider, createClient } from "urql";
+import { UserProvider } from '@auth0/nextjs-auth0';
+import { Toaster } from 'react-hot-toast';
 
 import Nav from '../components/Nav';
 
 import { StateContext } from '../lib/context';
 
-const client = createClient({url: process.env.NEXT_PUBLIC_BACKEND_API});
-console.log(process.env.NEXT_PUBLIC_BACKEND_API);
+const client = createClient({ url: process.env.NEXT_PUBLIC_BACKEND_API });
 
 function MyApp({ Component, pageProps }) {
   return (
-    
-    <StateContext>
-      <Provider value={client}>
-        <Nav/>
-        <Component {...pageProps} />
-      </Provider>
-    </StateContext>
+    <div>
+      <Head>
+        <title>Zapcart</title>
+        <link rel="icon" href="/images/zapkart.png" />
+      </Head>
+      <UserProvider>
+        <StateContext>
+          <Provider value={client}>
+            <Toaster />
+            <Nav />
+            <Component {...pageProps} />
+          </Provider>
+        </StateContext>
+      </UserProvider>
+    </div>
   );
 }
 

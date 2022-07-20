@@ -47,6 +47,13 @@ svg{
       /* -webkit-backdrop-filter: blur(5px); */
   }
 
+  .text-gradient{
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+  }
+
   .animation-delay-2000{
       animation-delay: 2s;
   }
