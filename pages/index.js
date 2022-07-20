@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className='grid gap-8 grid-cols-auto-fit 
+        <div className='mt-8 grid gap-8 grid-cols-auto-fit 
         '>
           {
             products.map((product) => (

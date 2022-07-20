@@ -47,7 +47,7 @@ export default function Profile({ user, orders }) {
           </div>
         </div>
         <Link href={'/api/auth/logout'}>
-          <button className="text-black text-lg font-mono font-bold mt-14 py-2 px-6 w-44 bg-cyan-500">Logout!!</button>
+          <button className="text-black text-lg font-mono font-bold mt-14 mb-14 py-2 px-6 w-44 bg-cyan-500">Logout!!</button>
         </Link>
       </div>
 
